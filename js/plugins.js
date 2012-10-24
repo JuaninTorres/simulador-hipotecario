@@ -9,3 +9,12 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
 
+function trim(s){ return s.replace(/^\s+|\s+$/g, "");}
+function isNumber(s){var n = trim(s); return n.length>0 && +n == n;}
+function isInteger(s){var n = trim(s);return n.length > 0 && !(/[^0-9]/).test(n);}
+function isFloat(s){var n = trim(s);return n.length>0 && !(/[^0-9.]/).test(n) && (/\.\d/).test(n);}
+
+Number.prototype.formatDinero = function(c, d, t){
+var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+   return '$' + s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+ };

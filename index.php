@@ -1,3 +1,7 @@
+<?php
+require_once 'uf.class.php';
+?>
+<?php /* $uf = new Uf;echo $uf->getDate(date('d-m-Y')); */?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es_ES"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="es_ES"> <![endif]-->
@@ -19,7 +23,69 @@
 
 	</header>
 	<div role="main">
-            Hola !!!
+            <table id="tMontos">
+                <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Pesos</th>
+                    <th>UF</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>Precio vivienda</th>
+                    <td id="pesosPrecioVivienda">-</td>
+                    <td><input onblur="tengoCambios()" type="number" id="ufPrecioVivienda" value="1500" /></td>
+                </tr>
+                <tr>
+                    <th>Subsidio</th>
+                    <td><select onchange="tengoCambios()" id="montosOpcionSubsidio">
+                            <option value="si">Si</option>
+                            <option value="no" selected>No</option>
+                        </select></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <th>Monto Subsidio</th>
+                    <td id="pesosMontoSubsidio">-</td>
+                    <td id="ufMontoSubsidio">-</td>
+                </tr>
+                <tr>
+                    <th>Ahorro Subsidio</th>
+                    <td id="pesosAhorroSubsidio">-</td>
+                    <td id="ufAhorroSubsidio">-</td>
+                </tr>
+                <tr>
+                    <th>Ahorro Adicional</th>
+                    <td id="pesosAhorroAdicional">-</td>
+                    <td id="ufAhorroAdicional">-</td>
+                </tr>
+                <tr>
+                    <th>Ahorro Necesario</th>
+                    <td id="pesosAhorroNecesario">-</td>
+                    <td id="ufAhorroNecesario">-</td>
+                </tr>
+                <tr>
+                    <th>Renta Líquida</th>
+                    <td><input onblur="tengoCambios()" type="number" id="pesosRentaLiquida" value="" /></td>
+                    <td id="ufRentaLiquida"></td>
+                </tr>
+                <tr>
+                    <th>Monto Crédito</th>
+                    <td id="pesosMontoCredito">-</td>
+                    <td id="ufMontoCredito">-</td>
+                </tr>
+                </tbody>
+            </table>
+            <table id="tValorUf">
+                <tbody>
+                    <tr>
+                        <th>Valor UF</th>
+                        <td><?php echo date('d-m-Y'); ?></td>
+                        <td id="valorUf">22691.92</td>
+                    </tr>
+                </tbody>
+            </table>
 	</div>
 	<footer>
 

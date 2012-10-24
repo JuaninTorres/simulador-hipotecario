@@ -80,6 +80,29 @@ body {
   font-family: "Trebuchet MT";
 }
 
+#tMontos {
+    display: inline;
+    float: left;
+    margin-right: 50px;
+}
+
+#tMontos tbody th {
+    text-align: left;
+}
+
+#tMontos tbody td {
+    text-align: center;
+}
+
+#tMontos tbody input {
+    text-align: center;
+}
+
+
+#tValorUf {
+    display: inline;
+    float: left;
+}
 
 
 /* =============================================================================
