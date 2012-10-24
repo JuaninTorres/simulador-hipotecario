@@ -32,9 +32,8 @@ function calculosGenerales(){
     {
         
     }else
-        ufMontoSubsidio = 0;
     {
-        
+        ufMontoSubsidio = 0;
     }
 }
 
