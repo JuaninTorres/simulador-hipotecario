@@ -1,0 +1,22 @@
+############
+## Windows
+############
+
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+
+# Photoshop
+*.psd
+
+# Excel
+*.xls
+
+# Netbeans
+nbproject/
+
+# Mac crap
+.DS_Store
