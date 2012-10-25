@@ -86,6 +86,139 @@ require_once 'uf.class.php';
                     </tr>
                 </tbody>
             </table>
+            
+            <table id="tDividendos">
+                <thead>
+                    <tr>
+                        <th>Años Dividendo</th>
+                        <th>Cuota Pesos</th>
+                        <th>Tasa</th>
+                        <th>Cuota UF</th>
+                        <th>Renta Líquida Exigida</th>
+                        <th>% Credito/Renta Liquida</th>
+                        <th>Válidez</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th rowspan="3">15 Años</th>
+                        <td id="d_15_1_cuota_pesos">-</td>
+                        <td id="d_15_1_tasa">-</td>
+                        <td id="d_15_1_cuota_uf">-</td>
+                        <td id="d_15_1_renta">-</td>
+                        <td id="d_15_1_credito_renta">-</td>
+                        <td id="d_15_1_validez">-</td>
+                    </tr>
+                    <tr>
+                        <td id="d_15_2_cuota_pesos">-</td>
+                        <td id="d_15_2_tasa">-</td>
+                        <td id="d_15_2_cuota_uf">-</td>
+                        <td id="d_15_2_renta">-</td>
+                        <td id="d_15_2_credito_renta">-</td>
+                        <td id="d_15_2_validez">-</td>
+                    </tr>
+                    <tr>
+                        <td id="d_15_3_cuota_pesos">-</td>
+                        <td id="d_15_3_tasa">-</td>
+                        <td id="d_15_3_cuota_uf">-</td>
+                        <td id="d_15_3_renta">-</td>
+                        <td id="d_15_3_credito_renta">-</td>
+                        <td id="d_15_3_validez">-</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="5">20 Años</th>
+                        <td id="d_20_1_cuota_pesos">-</td>
+                        <td id="d_20_1_tasa">-</td>
+                        <td id="d_20_1_cuota_uf">-</td>
+                        <td id="d_20_1_renta">-</td>
+                        <td id="d_20_1_credito_renta">-</td>
+                        <td id="d_20_1_validez">-</td>
+                    </tr>
+                    <tr>
+                        <td id="d_20_2_cuota_pesos">-</td>
+                        <td id="d_20_2_tasa">-</td>
+                        <td id="d_20_2_cuota_uf">-</td>
+                        <td id="d_20_2_renta">-</td>
+                        <td id="d_20_2_credito_renta">-</td>
+                        <td id="d_20_2_validez">-</td>
+                    </tr>
+                    <tr>
+                        <td id="d_20_3_cuota_pesos">-</td>
+                        <td id="d_20_3_tasa">-</td>
+                        <td id="d_20_3_cuota_uf">-</td>
+                        <td id="d_20_3_renta">-</td>
+                        <td id="d_20_3_credito_renta">-</td>
+                        <td id="d_20_3_validez">-</td>
+                    </tr>
+                    <tr>
+                        <td id="d_20_4_cuota_pesos">-</td>
+                        <td id="d_20_4_tasa">-</td>
+                        <td id="d_20_4_cuota_uf">-</td>
+                        <td id="d_20_4_renta">-</td>
+                        <td id="d_20_4_credito_renta">-</td>
+                        <td id="d_20_4_validez">-</td>
+                    </tr>
+                    <tr>
+                        <td id="d_20_5_cuota_pesos">-</td>
+                        <td id="d_20_5_tasa">-</td>
+                        <td id="d_20_5_cuota_uf">-</td>
+                        <td id="d_20_5_renta">-</td>
+                        <td id="d_20_5_credito_renta">-</td>
+                        <td id="d_20_5_validez">-</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="3">25 Años</th>
+                        <td id="d_25_1_cuota_pesos">-</td>
+                        <td id="d_25_1_tasa">-</td>
+                        <td id="d_25_1_cuota_uf">-</td>
+                        <td id="d_25_1_renta">-</td>
+                        <td id="d_25_1_credito_renta">-</td>
+                        <td id="d_25_1_validez">-</td>
+                    </tr>
+                    <tr>
+                        <td id="d_25_2_cuota_pesos">-</td>
+                        <td id="d_25_2_tasa">-</td>
+                        <td id="d_25_2_cuota_uf">-</td>
+                        <td id="d_25_2_renta">-</td>
+                        <td id="d_25_2_credito_renta">-</td>
+                        <td id="d_25_2_validez">-</td>
+                    </tr>
+                    <tr>
+                        <td id="d_25_3_cuota_pesos">-</td>
+                        <td id="d_25_3_tasa">-</td>
+                        <td id="d_25_3_cuota_uf">-</td>
+                        <td id="d_25_3_renta">-</td>
+                        <td id="d_25_3_credito_renta">-</td>
+                        <td id="d_25_3_validez">-</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="3">30 Años</th>
+                        <td id="d_30_1_cuota_pesos">-</td>
+                        <td id="d_30_1_tasa">-</td>
+                        <td id="d_30_1_cuota_uf">-</td>
+                        <td id="d_30_1_renta">-</td>
+                        <td id="d_30_1_credito_renta">-</td>
+                        <td id="d_30_1_validez">-</td>
+                    </tr>
+                    <tr>
+                        <td id="d_30_2_cuota_pesos">-</td>
+                        <td id="d_30_2_tasa">-</td>
+                        <td id="d_30_2_cuota_uf">-</td>
+                        <td id="d_30_2_renta">-</td>
+                        <td id="d_30_2_credito_renta">-</td>
+                        <td id="d_30_2_validez">-</td>
+                    </tr>
+                    <tr>
+                        <td id="d_30_3_cuota_pesos">-</td>
+                        <td id="d_30_3_tasa">-</td>
+                        <td id="d_30_3_cuota_uf">-</td>
+                        <td id="d_30_3_renta">-</td>
+                        <td id="d_30_3_credito_renta">-</td>
+                        <td id="d_30_3_validez">-</td>
+                    </tr>
+                </tbody>
+            </table>
+                
 	</div>
 	<footer>
 

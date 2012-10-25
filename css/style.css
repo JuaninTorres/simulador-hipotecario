@@ -82,7 +82,6 @@ body {
 
 #tMontos {
     display: inline;
-    float: left;
     margin-right: 50px;
 }
 
@@ -101,7 +100,6 @@ body {
 
 #tValorUf {
     display: inline;
-    float: left;
 }
 
 
