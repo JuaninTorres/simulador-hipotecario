@@ -1,7 +1,6 @@
 <?php
-require_once 'uf.class.php';
+require_once 'class/uf.class.php';
 ?>
-<?php /* $uf = new Uf;echo $uf->getDate(date('d-m-Y')); */?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es_ES"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="es_ES"> <![endif]-->
@@ -23,6 +22,15 @@ require_once 'uf.class.php';
 
 	</header>
 	<div role="main">
+	            <table id="tValorUf">
+                <tbody>
+                    <tr>
+                        <th>Valor UF</th>
+                        <td><?php echo date('d-m-Y'); ?></td>
+                        <td id="valorUf"><?php $uf = new Uf(date('Y'));echo $uf->getDate(date('d-m-Y'));?></td>
+                    </tr>
+                </tbody>
+            </table>
             <table id="tMontos">
                 <thead>
                 <tr>
@@ -77,16 +85,6 @@ require_once 'uf.class.php';
                 </tr>
                 </tbody>
             </table>
-            <table id="tValorUf">
-                <tbody>
-                    <tr>
-                        <th>Valor UF</th>
-                        <td><?php echo date('d-m-Y'); ?></td>
-                        <td id="valorUf">22691.92</td>
-                    </tr>
-                </tbody>
-            </table>
-            
             <table id="tDividendos">
                 <thead>
                     <tr>
