@@ -25,7 +25,8 @@ var tasa_mensual_30_2 = (Math.pow(1+(tasa_30_2/100), 1/12)-1);
 var tasa_mensual_30_3 = (Math.pow(1+(tasa_30_3/100), 1/12)-1);
 
 //$('#d_15_1_cuota_pesos').html(tasa_mensual_15_1+'%');
-
+var valorUf = parseFloat($('#valorUf').val());
+$('#valorUfFormateado').html(valorUf.formatDinero(2,',','.'));
 $('#d_15_1_tasa').html(tasa_15_1+'%');
 $('#d_15_2_tasa').html(tasa_15_2+'%');
 $('#d_15_3_tasa').html(tasa_15_3+'%');
@@ -43,7 +44,7 @@ $('#d_30_3_tasa').html(tasa_30_3+'%');
 
 function tengoCambios(){
     var puedoEjecutar = true;
-    var valorUf = $('#valorUf').html();
+    var valorUf = $('#valorUf').val();
     var opcionSubsidio = $('#montosOpcionSubsidio').val();
     var pesosRentaLiquida = $('#pesosRentaLiquida').val();
     var ufPrecioVivienda = $('#ufPrecioVivienda').val();
@@ -63,15 +64,18 @@ function validarRenta(porcentaje,contenedor)
     if(porcentaje>porcentajeMaximo)
     {
         $('#'+contenedor).html('No Válido');
+        $('#'+contenedor).parent().addClass('ui-state-error');
+        //ui-state-error
         // Marco en rojo
     }
     else
     {
         $('#'+contenedor).html('Válido');
+        $('#'+contenedor).parent().removeClass('ui-state-error');
     }
 }
 function calculosGenerales(){
-    var valorUf = parseFloat($('#valorUf').html());
+    
     var pesosRentaLiquida = parseFloat($('#pesosRentaLiquida').val());
     var ufPrecioVivienda = parseFloat($('#ufPrecioVivienda').val());
     var conSubsidio = (trim($('#montosOpcionSubsidio').val())=='si')?true:false;

@@ -75,33 +75,95 @@ td { vertical-align: top; }
    ========================================================================== */
 
 body {
-  background: #f99c1b;
+  background: white;
   font-size: 14px;
-  font-family: "Trebuchet MT";
+  font-family: "Trebuchet MS";
 }
 
+#tDividendos {
+  margin-bottom: 2em;
+  border: 2px solid #c27305;
+  width: 60em;
+}
+
+#tDividendos th {
+  background: #f99c1b;
+  font-size: 1.1em;
+}
+
+#tDividendos tbody th {
+  background: #f99c1b;
+  text-align: center;
+  width: 12em;
+}
+
+#tDividendos tbody td {
+  text-align: center;
+}
+
+#tDividendos tbody input {
+  text-align: center;
+}
+
+
 #tMontos {
-    display: inline;
-    margin-right: 50px;
+  margin-bottom: 2em;
+  border: 2px solid #c27305;
+  width: 40em;
+}
+
+#tMontos th {
+  background: #f99c1b;
+  font-size: 1.1em;
 }
 
 #tMontos tbody th {
-    text-align: left;
+  background: #f99c1b;
+  text-align: left;
+  width: 12em;
 }
 
 #tMontos tbody td {
-    text-align: center;
+  text-align: center;
 }
 
 #tMontos tbody input {
-    text-align: center;
+  text-align: center;
 }
 
 
 #tValorUf {
-    display: inline;
+  margin-bottom: 2em;
+  border: 2px solid #c27305;
+  width: 40em;
 }
 
+#tValorUf th {
+  background: #f99c1b;
+  font-size: 1.1em;
+}
+
+#tValorUf tbody th {
+  background: #f99c1b;
+  text-align: left;
+  width: 12em;
+}
+
+#tValorUf tbody td {
+  text-align: center;
+}
+
+#tValorUf tbody input {
+  text-align: center;
+}
+
+#pesosAhorroNecesario,#ufAhorroNecesario,#pesosMontoCredito,#ufMontoCredito{
+  background: #FFE45C;
+  font-weight: bold;
+}
+.bordeSuperior {
+  border-top: solid 0.1em #c27305;
+}
 
 /* =============================================================================
    Media Queries

@@ -1,5 +1,6 @@
 <?php
 require_once 'class/uf.class.php';
+$uf = new Uf(date('Y'));
 ?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es_ES"> <![endif]-->
@@ -14,7 +15,7 @@ require_once 'class/uf.class.php';
 	<meta name="author" content="Juan Torres">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.9.0.custom.min.css">
+  <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.9.0.custom.min.css">
 	<script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 </head>
 <body>
@@ -22,12 +23,13 @@ require_once 'class/uf.class.php';
 
 	</header>
 	<div role="main">
-	            <table id="tValorUf">
+            <input type="hidden" id="valorUf" value="<?php echo $uf->getDate(date('d-m-Y'));?>">
+	        <table id="tValorUf">
                 <tbody>
                     <tr>
                         <th>Valor UF</th>
+                        <td id="valorUfFormateado"><?php echo $uf->getDate(date('d-m-Y'));?></td>
                         <td><?php echo date('d-m-Y'); ?></td>
-                        <td id="valorUf"><?php $uf = new Uf(date('Y'));echo $uf->getDate(date('d-m-Y'));?></td>
                     </tr>
                 </tbody>
             </table>
@@ -40,12 +42,12 @@ require_once 'class/uf.class.php';
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
+                <tr class="bordeSuperior">
                     <th>Precio vivienda</th>
                     <td id="pesosPrecioVivienda">-</td>
                     <td><input onblur="tengoCambios()" type="number" id="ufPrecioVivienda" value="1500" /></td>
                 </tr>
-                <tr>
+                <tr class="bordeSuperior">
                     <th>Subsidio</th>
                     <td><select onchange="tengoCambios()" id="montosOpcionSubsidio">
                             <option value="si">Si</option>
@@ -53,32 +55,32 @@ require_once 'class/uf.class.php';
                         </select></td>
                     <td>-</td>
                 </tr>
-                <tr>
+                <tr class="bordeSuperior">
                     <th>Monto Subsidio</th>
                     <td id="pesosMontoSubsidio">-</td>
                     <td id="ufMontoSubsidio">-</td>
                 </tr>
-                <tr>
+                <tr class="bordeSuperior">
                     <th>Ahorro Subsidio</th>
                     <td id="pesosAhorroSubsidio">-</td>
                     <td id="ufAhorroSubsidio">-</td>
                 </tr>
-                <tr>
+                <tr class="bordeSuperior">
                     <th>Ahorro Adicional</th>
                     <td id="pesosAhorroAdicional">-</td>
                     <td id="ufAhorroAdicional">-</td>
                 </tr>
-                <tr>
+                <tr class="bordeSuperior">
                     <th>Ahorro Necesario</th>
                     <td id="pesosAhorroNecesario">-</td>
-                    <td id="ufAhorroNecesario">-</td>
+                    <td  id="ufAhorroNecesario">-</td>
                 </tr>
-                <tr>
+                <tr class="bordeSuperior">
                     <th>Renta Líquida</th>
                     <td><input onblur="tengoCambios()" type="number" id="pesosRentaLiquida" value="" /></td>
                     <td id="ufRentaLiquida"></td>
                 </tr>
-                <tr>
+                <tr class="bordeSuperior">
                     <th>Monto Crédito</th>
                     <td id="pesosMontoCredito">-</td>
                     <td id="ufMontoCredito">-</td>
@@ -98,7 +100,7 @@ require_once 'class/uf.class.php';
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="bordeSuperior">
                         <th rowspan="3">15 Años</th>
                         <td id="d_15_1_cuota_pesos">-</td>
                         <td id="d_15_1_tasa">-</td>
@@ -123,7 +125,7 @@ require_once 'class/uf.class.php';
                         <td id="d_15_3_credito_renta">-</td>
                         <td id="d_15_3_validez">-</td>
                     </tr>
-                    <tr>
+                    <tr class="bordeSuperior">
                         <th rowspan="5">20 Años</th>
                         <td id="d_20_1_cuota_pesos">-</td>
                         <td id="d_20_1_tasa">-</td>
@@ -164,7 +166,7 @@ require_once 'class/uf.class.php';
                         <td id="d_20_5_credito_renta">-</td>
                         <td id="d_20_5_validez">-</td>
                     </tr>
-                    <tr>
+                    <tr class="bordeSuperior">
                         <th rowspan="3">25 Años</th>
                         <td id="d_25_1_cuota_pesos">-</td>
                         <td id="d_25_1_tasa">-</td>
@@ -189,7 +191,7 @@ require_once 'class/uf.class.php';
                         <td id="d_25_3_credito_renta">-</td>
                         <td id="d_25_3_validez">-</td>
                     </tr>
-                    <tr>
+                    <tr class="bordeSuperior">
                         <th rowspan="3">30 Años</th>
                         <td id="d_30_1_cuota_pesos">-</td>
                         <td id="d_30_1_tasa">-</td>
