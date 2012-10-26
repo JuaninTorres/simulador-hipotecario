@@ -80,6 +80,10 @@ body {
   font-family: "Trebuchet MS";
 }
 
+#dialog-message{
+  display: none;
+}
+
 #tDividendos {
   margin-bottom: 2em;
   border: 2px solid #c27305;

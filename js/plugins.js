@@ -15,9 +15,58 @@ function isInteger(s){var n = trim(s);return n.length > 0 && !(/[^0-9]/).test(n)
 function isFloat(s){var n = trim(s);return n.length>0 && !(/[^0-9.]/).test(n) && (/\.\d/).test(n);}
 
 Number.prototype.formatDinero = function(c, d, t){
-var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
-   return '$' + s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
- };
+	var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+	return '$' + s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+};
 function round_number(num, dec) {
     return Math.round(num * Math.pow(10, dec)) / Math.pow(10, dec);
 }
+function separadorMiles(donde,caracter)
+{
+pat = /[\*,\+,\(,\),\?,\\,\$,\[,\],\^]/
+valor = donde.value
+largo = valor.length
+crtr = true
+if(isNaN(caracter) || pat.test(caracter) == true)
+	{
+	if (pat.test(caracter)==true) 
+		{caracter = "\\" + caracter}
+	carcter = new RegExp(caracter,"g")
+	valor = valor.replace(carcter,"")
+	donde.value = valor
+	crtr = false
+	}
+else
+	{
+	var nums = new Array()
+	cont = 0
+	for(m=0;m<largo;m++)
+		{
+		if(valor.charAt(m) == "." || valor.charAt(m) == " ")
+			{continue;}
+		else{
+			nums[cont] = valor.charAt(m)
+			cont++
+			}
+		}
+	}
+
+
+var cad1="",cad2="",tres=0
+if(largo > 3 && crtr == true)
+	{
+	for (k=nums.length-1;k>=0;k--)
+		{
+		cad1 = nums[k]
+		cad2 = cad1 + cad2
+		tres++
+		if((tres%3) == 0)
+			{
+			if(k!=0){
+				cad2 = "." + cad2
+				}
+			}
+		}
+	 donde.value = cad2
+	}
+}	

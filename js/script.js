@@ -2,6 +2,12 @@
 
 */
 
+$('#btnCalcular').button({
+    icons: {
+            primary: "ui-icon-note",
+        }
+    });
+
 var porcentajeMaximo = 0.25;
 
 var tasa_15_1 = 5.3;var tasa_15_2 = 5.6;var tasa_15_3 = 5.8;
@@ -43,19 +49,47 @@ $('#d_30_2_tasa').html(tasa_30_2+'%');
 $('#d_30_3_tasa').html(tasa_30_3+'%');
 
 function tengoCambios(){
-    var puedoEjecutar = true;
+    var mensajeError = '';
     var valorUf = $('#valorUf').val();
     var opcionSubsidio = $('#montosOpcionSubsidio').val();
-    var pesosRentaLiquida = $('#pesosRentaLiquida').val();
-    var ufPrecioVivienda = $('#ufPrecioVivienda').val();
-    
-    puedoEjecutar = (isNumber(valorUf) && valorUf>0)?puedoEjecutar:false;
-    puedoEjecutar = (opcionSubsidio.length>0)?puedoEjecutar:false;
-    puedoEjecutar = (isNumber(pesosRentaLiquida) && pesosRentaLiquida>0)?puedoEjecutar:false;
-    puedoEjecutar = (isNumber(ufPrecioVivienda) && ufPrecioVivienda>0)?puedoEjecutar:false;
-    
-    if(puedoEjecutar){
+
+    var pesosRentaLiquida = $('#pesosRentaLiquida').val()+"";
+    pesosRentaLiquida=pesosRentaLiquida.replace('.','');
+
+    var ufPrecioVivienda = $('#ufPrecioVivienda').val()+"";
+    ufPrecioVivienda=ufPrecioVivienda.replace('.','');
+
+    if(!isNumber(valorUf) || valorUf<=0)
+    {
+        mensajeError += '<p><span class="ui-icon ui-icon-circle-close" style="float: left; margin: 0 7px 40px 0;"></span>No se pudo obtener el valor de la UF</p>';
+    }
+    if(opcionSubsidio.length===0)
+    {
+        mensajeError += '<p><span class="ui-icon ui-icon-circle-close" style="float: left; margin: 0 7px 40px 0;"></span>Debe seleccionar una opción de subsidio</p>';
+    }
+    if(!isNumber(pesosRentaLiquida) || pesosRentaLiquida<=0)
+    {
+        mensajeError += '<p><span class="ui-icon ui-icon-circle-close" style="float: left; margin: 0 7px 40px 0;"></span>Debe ingresar un monto para la renta liquida</p>';
+    }
+    if(!isNumber(ufPrecioVivienda) || ufPrecioVivienda<=0)
+    {
+        mensajeError += '<p><span class="ui-icon ui-icon-circle-close" style="float: left; margin: 0 7px 40px 0;"></span>Debe ingresar un monto para el precio de la vivienda</p>';
+    }
+
+    if(mensajeError.length===0){
         calculosGenerales();
+    }
+    else
+    {
+        $('#dialog-message').html(mensajeError);
+        $('#dialog-message').dialog({
+            modal: true,
+            buttons: {
+                Ok: function() {
+                    $( this ).dialog( "close" );
+                }
+            }
+        });
     }
 }
 
@@ -76,8 +110,10 @@ function validarRenta(porcentaje,contenedor)
 }
 function calculosGenerales(){
     
-    var pesosRentaLiquida = parseFloat($('#pesosRentaLiquida').val());
-    var ufPrecioVivienda = parseFloat($('#ufPrecioVivienda').val());
+    var pesosRentaLiquida = $('#pesosRentaLiquida').val()+"";
+    pesosRentaLiquida = parseFloat(pesosRentaLiquida.replace('.',''));
+    var ufPrecioVivienda = $('#ufPrecioVivienda').val()+"";
+    ufPrecioVivienda = parseFloat(ufPrecioVivienda.replace('.',''));
     var conSubsidio = (trim($('#montosOpcionSubsidio').val())=='si')?true:false;
     
     // Calculo del subsidio
